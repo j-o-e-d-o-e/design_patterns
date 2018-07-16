@@ -4,11 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 class MainFrame extends JFrame {
-    private FormPanel formPanel;
-
     MainFrame() {
         super("Demo for observer in swing");
-        formPanel = new FormPanel();
+        FormPanel formPanel = new FormPanel();
         formPanel.setFormListener(e -> {
             System.out.println(e.getName() + " " + e.getGender());
             ((FormPanel) e.getSource()).clearData();
