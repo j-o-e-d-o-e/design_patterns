@@ -1,10 +1,10 @@
 package observer_basic;
 
 class Subject {
-    private AnswerListener listener;
-    static final int YES = 0, NO = 1;
+    private AnswerListener listener; // observer
+    private static final int YES = 0, NO = 1;
 
-    void fireEvent(AnswerEvent e) {
+    void fireEvent(AnswerEvent e) { // notification
         if (e.getID() == YES)
             e.setAnswer("The answer is: YES");
         else if (e.getID() == NO)
@@ -12,7 +12,7 @@ class Subject {
         listener.eventOccured(e);
     }
 
-    void addAnswerListener(AnswerListener listener) {
+    void addAnswerListener(AnswerListener listener) { // registration
         this.listener = listener;
     }
 }

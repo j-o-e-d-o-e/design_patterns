@@ -11,7 +11,7 @@ class FormPanel extends JPanel {
     private JRadioButton maleBtn;
     private JRadioButton femaleBtn;
     private JButton okBtn;
-    private FormListener formListener;
+    private FormListener formListener; // observer
 
     FormPanel() {
         nameField = new JTextField(10);
