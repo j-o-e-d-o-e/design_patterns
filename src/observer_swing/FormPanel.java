@@ -36,7 +36,7 @@ class FormPanel extends JPanel {
         okBtn.addActionListener(event -> {
             String name = nameField.getText();
             String gender = genderBtnGroup.getSelection().getActionCommand();
-            formListener.formEventOccured(new FormEvent(this, name, gender));
+            formListener.eventOccured(new FormEvent(this, name, gender));
         });
     }
 

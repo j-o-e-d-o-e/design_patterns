@@ -4,14 +4,22 @@ import java.util.EventObject;
 
 class AnswerEvent extends EventObject {
     private int id;
-    static final int YES = 0, NO = 1, CANCEL = 2;
+    private String answer;
 
-    AnswerEvent(Object source, int id) {
-        super(source);
+    AnswerEvent(int id) {
+        super(new Object());
         this.id = id;
     }
 
     int getID() {
         return id;
+    }
+
+    void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    String getAnswer() {
+        return answer;
     }
 }

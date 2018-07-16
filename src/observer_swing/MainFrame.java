@@ -7,7 +7,7 @@ class MainFrame extends JFrame {
     private FormPanel formPanel;
 
     MainFrame() {
-        super("Demo for observer_basic pattern in swing");
+        super("Demo for observer in swing");
         formPanel = new FormPanel();
         formPanel.setFormListener(e -> {
             System.out.println(e.getName() + " " + e.getGender());

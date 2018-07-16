@@ -1,28 +1,18 @@
 package observer_basic;
 
-import java.util.Vector;
-
 class Subject {
-    private Vector<AnswerListener> listeners = new Vector<>();
-
-    void addAnswerListener(AnswerListener listener) {
-        listeners.addElement(listener);
-    }
+    private AnswerListener listener;
+    static final int YES = 0, NO = 1;
 
     void fireEvent(AnswerEvent e) {
-        for (int i = 0; i < listeners.size(); i++) {
-            AnswerListener listener = listeners.elementAt(i);
-            switch (e.getID()) {
-                case AnswerEvent.YES:
-                    listener.yes(e);
-                    break;
-                case AnswerEvent.NO:
-                    listener.no(e);
-                    break;
-                case AnswerEvent.CANCEL:
-                    listener.cancel(e);
-                    break;
-            }
-        }
+        if (e.getID() == YES)
+            e.setAnswer("The answer is: YES");
+        else if (e.getID() == NO)
+            e.setAnswer("The answer is: NO");
+        listener.eventOccured(e);
+    }
+
+    void addAnswerListener(AnswerListener listener) {
+        this.listener = listener;
     }
 }
