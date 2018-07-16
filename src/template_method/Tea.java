@@ -14,6 +14,6 @@ class Tea extends HotDrink {
     @Override
     void serve() {
         super.serve();
-        System.out.println(" cup of tea");
+        System.out.println("cup of tea");
     }
 }
