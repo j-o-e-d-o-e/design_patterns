@@ -1,6 +1,6 @@
 package adapter;
 
-class Adapter {
+class Adapter { // adapter class
     private Server server;
 
     Adapter() {
