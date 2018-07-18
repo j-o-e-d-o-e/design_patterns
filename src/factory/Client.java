@@ -1,6 +1,11 @@
 package factory;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Client {
+    private static final Logger LOGGER = Logger.getLogger(composite.Client.class.getName());
+
     public static void main(String[] args) {
         Root root = (Root) Factory.createNewElement("r"); //root
         Folder d1 = (Folder) Factory.createNewElement("r|d1"); //root|folder
@@ -16,6 +21,9 @@ public class Client {
                 .findFirst().orElse(null));
 
         print(root, "");
+        LOGGER.log(Level.INFO, "{0} main-elements and {1} sub-elements in root", new Object[]{root.children.size(),
+                root.children.stream().filter(child -> child instanceof FileSystemContainer)
+                        .mapToLong(child -> ((FileSystemContainer) child).children.size()).sum()});
         root.format();
     }
 
