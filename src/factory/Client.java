@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Client {
-    private static final Logger LOGGER = Logger.getLogger(composite.Client.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(Client.class.getName());
 
     public static void main(String[] args) {
         Root root = (Root) Factory.createNewElement("r"); //root
@@ -23,7 +23,7 @@ public class Client {
         print(root, "");
         LOGGER.log(Level.INFO, "{0} main-elements and {1} sub-elements in root", new Object[]{root.children.size(),
                 root.children.stream().filter(child -> child instanceof FileSystemContainer)
-                        .mapToLong(child -> ((FileSystemContainer) child).children.size()).sum()});
+                        .mapToInt(child -> ((FileSystemContainer) child).children.size()).sum()});
         root.format();
     }
 
