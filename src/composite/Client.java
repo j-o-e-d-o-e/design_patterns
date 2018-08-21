@@ -20,7 +20,7 @@ public class Client {
         folder1.addChild(folder3);
 
         System.out.println("Children of folder1: ");
-        folder1.children.forEach(child -> System.out.println(child.getName()));
+        folder1.getChildren().forEach(child -> System.out.println(child.getName()));
 //        LOGGER.log(Level.INFO, "processing {0} elements in folder1", folder1.children.size());
 
         file1.delete();
@@ -28,7 +28,7 @@ public class Client {
         folder1.moveTo(folder2);
 
         System.out.println("Children of folder2: ");
-        folder2.children.forEach(child -> System.out.println(child.getName()));
+        folder2.getChildren().forEach(child -> System.out.println(child.getName()));
 //        LOGGER.log(Level.INFO, "processing {0} elements in folder2", folder2.children.size());
 
         folder2.delete();

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Folder extends FileSystemElement {
-    List<FileSystemElement> children = new LinkedList<>();
+    private List<FileSystemElement> children = new LinkedList<>();
 
     public Folder(String name) {
         super(name);
@@ -32,5 +32,9 @@ public class Folder extends FileSystemElement {
             children.add(element);
             element.setParent(this);
         }
+    }
+
+    List<FileSystemElement> getChildren() {
+        return children;
     }
 }

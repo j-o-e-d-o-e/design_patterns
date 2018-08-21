@@ -1,6 +1,7 @@
 package composite;
 
 class File extends FileSystemElement {
+
     public File(String name) {
         super(name);
     }

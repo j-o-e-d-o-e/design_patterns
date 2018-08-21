@@ -1,8 +1,8 @@
 package composite;
 
 public abstract class FileSystemElement {
-    String name;
-    Folder parent;
+    protected String name;
+    protected Folder parent;
 
     FileSystemElement(String name) {
         this.name = name;
@@ -27,4 +27,5 @@ public abstract class FileSystemElement {
     void setParent(Folder parent) {
         this.parent = parent;
     }
+
 }
