@@ -18,7 +18,9 @@ class FormPanel extends JPanel {
         maleBtn = new JRadioButton("male");
         maleBtn.setSelected(true);
         maleBtn.setActionCommand("male");
+        maleBtn.setMnemonic(KeyEvent.VK_M);
         femaleBtn = new JRadioButton("female");
+        femaleBtn.setMnemonic(KeyEvent.VK_F);
         femaleBtn.setActionCommand("female");
         genderBtnGroup = new ButtonGroup();
         genderBtnGroup.add(maleBtn);
@@ -90,6 +92,8 @@ class FormPanel extends JPanel {
     }
 
     void clearData() {
-        this.nameField.setText("");
+        nameField.setText("");
+        nameField.requestFocus();
+        maleBtn.setSelected(true);
     }
 }
