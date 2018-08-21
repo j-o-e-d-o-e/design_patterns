@@ -34,15 +34,15 @@ class FormPanel extends JPanel {
         layoutComponents();
     }
 
-    private void addListeners() {
-        okBtn.addActionListener(event -> {
+    private void addListeners() { // registration
+        okBtn.addActionListener(event -> { // notification
             String name = nameField.getText();
             String gender = genderBtnGroup.getSelection().getActionCommand();
             formListener.eventOccured(new FormEvent(this, name, gender));
         });
     }
 
-    void setFormListener(FormListener formListener) {
+    void setFormListener(FormListener formListener) { // registration
         this.formListener = formListener;
     }
 

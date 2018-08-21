@@ -9,6 +9,8 @@ class Subject {
             e.setAnswer("The answer is: YES");
         else if (e.getID() == NO)
             e.setAnswer("The answer is: NO");
+        else
+            e.setAnswer("The answer is: UNDEFINED");
         listener.eventOccured(e);
     }
 
