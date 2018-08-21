@@ -6,13 +6,6 @@ class File extends FileSystemElement {
     }
 
     @Override
-    public void moveTo(Folder target) {
-        if (parent != null)
-            parent.removeChild(this);
-        target.addChild(this);
-    }
-
-    @Override
     public void delete() {
         if (parent != null)
             parent.removeChild(this);

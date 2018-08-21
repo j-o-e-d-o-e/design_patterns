@@ -12,16 +12,9 @@ public class Folder extends FileSystemElement {
     }
 
     @Override
-    public void moveTo(Folder target) {
-        if (parent != null)
-            parent.removeChild(this);
-        target.addChild(this);
-    }
-
-    @Override
     public void delete() {
         while (!children.isEmpty())
-            children.get(0).delete();
+            children.get(0).delete(); // elements of children are either file or folder
         if (parent != null)
             parent.removeChild(this);
         System.out.println("Deleted folder: " + name);

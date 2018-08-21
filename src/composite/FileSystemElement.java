@@ -8,7 +8,12 @@ public abstract class FileSystemElement {
         this.name = name;
     }
 
-    abstract public void moveTo(Folder target);
+    public void moveTo(Folder target) {
+        if (parent != null)
+            parent.removeChild(this);
+        target.addChild(this);
+    }
+
     abstract public void delete();
 
     public String getName() {
