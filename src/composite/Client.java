@@ -18,13 +18,13 @@ public class Client {
         folder1.addChild(file2);
         folder1.addChild(file3);
 
-        folder1.children.forEach(e -> System.out.println(e.getName()));
+        folder1.children.forEach(child -> System.out.println(child.getName()));
         LOGGER.log(Level.INFO, "processing {0} elements in folder1", folder1.children.size());
 
         folder1.removeChild(file2);
         folder1.moveTo(folder2);
 
-        folder2.children.forEach(e -> System.out.println(e.getName()));
+        folder2.children.forEach(child -> System.out.println(child.getName()));
         LOGGER.log(Level.INFO, "processing {0} elements in folder2", folder2.children.size());
 
         folder2.delete();
