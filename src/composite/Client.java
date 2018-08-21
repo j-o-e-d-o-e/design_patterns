@@ -1,6 +1,5 @@
 package composite;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Client {
@@ -13,16 +12,19 @@ public class Client {
 
         Folder folder1 = new Folder("folder1");
         Folder folder2 = new Folder("folder2");
+        Folder folder3 = new Folder("folder3");
 
         folder1.addChild(file1);
         folder1.addChild(file2);
         folder1.addChild(file3);
+        folder1.addChild(folder3);
 
         System.out.println("Children of folder1: ");
         folder1.children.forEach(child -> System.out.println(child.getName()));
 //        LOGGER.log(Level.INFO, "processing {0} elements in folder1", folder1.children.size());
 
-        folder1.removeChild(file2);
+        file1.delete();
+        folder3.delete();
         folder1.moveTo(folder2);
 
         System.out.println("Children of folder2: ");
