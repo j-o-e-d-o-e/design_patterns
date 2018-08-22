@@ -9,7 +9,7 @@ class MainFrame extends JFrame {
         FormPanel formPanel = new FormPanel();
         formPanel.setFormListener(e -> {
             System.out.println(e.getName() + " " + e.getGender());
-            formPanel.clearData();
+            ((FormPanel)e.getSource()).clearData();
         });
         add(formPanel, BorderLayout.CENTER);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
