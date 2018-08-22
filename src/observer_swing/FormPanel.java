@@ -35,7 +35,7 @@ class FormPanel extends JPanel {
     }
 
     private void addListeners() {
-        okBtn.addActionListener(event -> { // registration of buttonListener (also observer)
+        okBtn.addActionListener(listener -> { // registration of buttonListener (also observer)
             String name = nameField.getText();
             String gender = genderBtnGroup.getSelection().getActionCommand();
             formListener.eventOccured(new FormEvent(this, name, gender)); // notification
