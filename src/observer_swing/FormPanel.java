@@ -42,7 +42,7 @@ class FormPanel extends JPanel {
         });
     }
 
-    void setFormListener(FormListener formListener) { // registration of fromListener
+    void setFormListener(FormListener formListener) { // registration of formListener
         this.formListener = formListener;
     }
 
