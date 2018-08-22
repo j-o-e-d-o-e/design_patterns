@@ -7,9 +7,9 @@ class MainFrame extends JFrame {
     MainFrame() {
         super("Demo for observer in swing");
         FormPanel formPanel = new FormPanel();
-        formPanel.setFormListener(listener -> {
-            System.out.println(listener.getName() + " " + listener.getGender());
-            ((FormPanel)listener.getSource()).clearData();
+        formPanel.setFormListener(event -> {
+            System.out.println(event.getName() + " " + event.getGender());
+            ((FormPanel)event.getSource()).clearData();
         });
         add(formPanel, BorderLayout.CENTER);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
