@@ -12,6 +12,7 @@ public class Client {
         root.addChild(folder1);
         Folder folder2 = new Folder("folder2");
         root.addChild(folder2);
+        root.addChild(new Folder("folder3"));
 
         folder1.addChild(file1);
         folder1.addChild(file2);
