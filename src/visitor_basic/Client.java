@@ -5,6 +5,5 @@ public class Client {
         Car car = new Car();
         car.accept(new CheckVisitor());
         car.accept(new RepairVisitor());
-
     }
 }

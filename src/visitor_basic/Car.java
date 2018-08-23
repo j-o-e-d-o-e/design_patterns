@@ -3,11 +3,10 @@ package visitor_basic;
 class Car {
     private Engine engine = new Engine();
     private Body body = new Body();
-    private Wheel[] wheels = {new Wheel("front left"), new Wheel("front right"), new Wheel("back left"), new Wheel("back right")};
+    private Wheel[] wheels = {new Wheel("Front left"), new Wheel("Front right"), new Wheel("Back left"), new Wheel("Back right")};
 
     void accept(Visitor visitor) {
         if (visitor instanceof CheckVisitor) {
-            visitor.visit(this);
             engine.accept(visitor);
             body.accept(visitor);
             for (Wheel wheel : wheels)

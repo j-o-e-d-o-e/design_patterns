@@ -1,24 +1,18 @@
 package visitor_basic;
 
 public class CheckVisitor implements Visitor {
-
-    @Override
-    public void visit(Car car) {
-        System.out.println("Checking car.");
-    }
-
     @Override
     public void visit(Engine engine) {
-        System.out.println("Checking engine.");
+        System.out.println("Checking " + engine.getClass().getSimpleName());
     }
 
     @Override
     public void visit(Body body) {
-        System.out.println("Checking body.");
+        System.out.println("Checking " + body.getClass().getSimpleName());
     }
 
     @Override
     public void visit(Wheel wheel) {
-        System.out.println("Checking " + wheel.getName() + " wheel.");
+        System.out.println("Checking " + wheel.getName() + " wheel");
     }
 }
