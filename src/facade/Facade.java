@@ -11,6 +11,7 @@ class Facade {
         this.cable = cable;
     }
 
+    @SuppressWarnings("SameParameterValue")
     void playGuitar(String songName){
         guitar.on();
         amp.on();
