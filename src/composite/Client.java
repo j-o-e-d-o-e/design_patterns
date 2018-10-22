@@ -6,9 +6,9 @@ public class Client {
     private static final Logger LOGGER = Logger.getLogger(Client.class.getName());
 
     public static void main(String[] args) {
-        File file1 = new File("file1");
-        File file2 = new File("file2");
-        File file3 = new File("file3");
+        FileSystemElement file1 = new File("file1");
+        FileSystemElement file2 = new File("file2");
+        FileSystemElement file3 = new File("file3");
 
         Folder folder1 = new Folder("folder1");
         Folder folder2 = new Folder("folder2");
